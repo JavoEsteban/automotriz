@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "VistaSucursal";
+    Layout = "~/Views/Shared/_Layout_general.cshtml";
+}
+
+<h2>VistaSucursal</h2>
+<div class="container" id="imagenes">
+    <input type="text" class="form-control" value="Hola!!" />
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+
+         listarSucursales();
+     }); 
+
+    function listarSucursales() {
+        $.ajax({
+            type: "POST",
+            url: "/Sucursal/TraerSucursal",
+            content: "application/json; charset=utf-8",
+            dataType: "json",
+
+            success: function (respuesta) {
+                let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                let listaSucursal = jQuery.parseJSON(data.Descripcion);
+                
+
+                $.each(listaSucursal, function (index, item) {
+                    //let strHtml = '<div class="container">';
+                     let strHtml = '<img src="' + item.IMAGEN + '"/>';
+                    strHtml += '<input type="text" class="form-control" value="' + item.DESCRIPCION + '"/>';
+                    strHtml += '<input type="text" class="form-control" value="' + item.DIRECCION + '"/>';
+                    strHtml += '<input type="text" class="form-control" value="' + item.TELEFONO + '"/>';
+                    //strHtml = '</div> ';
+                    $("#imagenes").append(strHtml);
+
+                    
+                });
+
+                //$("#imagenes").selectpicker('refresh');
+
+                
+            }
+
+
+
+
+        });
+
+        
+    }
+
+
+</script>

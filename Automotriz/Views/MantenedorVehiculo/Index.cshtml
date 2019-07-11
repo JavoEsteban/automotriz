@@ -1,0 +1,1293 @@
+﻿@using Automotriz.Models;
+@{
+
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout_general.cshtml";
+   
+
+}
+
+
+
+<div class="card">
+    <!-- inicio tarjeta -->
+
+    <div class="card-header card-header-icon" data-background-color="orange">
+        <img src="https://img.icons8.com/ios/25/000000/truck.png">
+    </div>
+    <div class="card-content">
+        <h4 class="card-title">Datos de Equipos </h4>
+
+
+        <p class="description">
+            Este módulo permite Agregar/Editar/Eliminar Vehiculos
+        </p>
+
+    </div>
+
+    <div class="row" >
+        <div class="col-md-12">
+            <div id="formulario" class="col-sm-12">
+                <div class="row">
+                    <div class="card" style="margin-left:1% !important;">
+                        <input id="ID_VEHICULO" type="hidden" value="">
+                        <div class="card-header card-header-icon" data-background-color="orange">
+                            <img src="https://img.icons8.com/ios-glyphs/40/fff/cab-back-view.png" />
+                        </div>
+                        <div class="card-content">
+                            <div class="col-md-2">
+
+                                <label class="control-label">PPU</label>
+                                <input type="text" class="form-control text-uppercase " id="patente" />
+                            </div>
+
+                            <div class="col-md-2">
+
+
+                                <label class="control-label">Marca</label>
+                                <select type="text" class="selectpicker" id="cmbMarca">
+                                    <option value="">Marca</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">Modelo</label>
+
+                                <select type="text" class="selectpicker" id="cmbModelo">
+                                    <option value="">Modelo</option>
+
+
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+
+                                <label class="control-label">Version</label>
+                                <input type="text" class="form-control text-uppercase" id="version" />
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">Tipo de Vehiculo</label>
+
+                                <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbTipoVehiculo">
+                                    <option value="">Tipo Vehiculo</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="card" style="margin-left:1% !important;">
+                        <div class="card-header card-header-icon" data-background-color="orange">
+
+                            <img src="https://img.icons8.com/wired/40/fff/engine.png">
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                            <div class="col-md-2">
+
+                                <label class="control-label">Cilindrada</label>
+
+                                <input type="text" class="form-control text-right" id="cilindrada" />
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">Año</label>
+
+                                <input type="text" class="form-control text-right" id="anio" />
+                            </div>
+
+
+                            <div class="col-md-2">
+                                <label class="control-label">COLOR</label>
+
+                                <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbColor">
+                                    <option value="">COLOR</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">Kilometraje</label>
+
+                                <input type="number" min="0" class="form-control text-right" id="kilometraje" />
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="control-label">Combustible</label>
+
+                                <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbCombustible">
+                                    <option value="">Combustible</option>
+
+
+                                </select>
+
+
+                            </div>
+                        </div>
+                            <div class="row" style="margin-left:8% !important;">
+                                <div class="col-md-3">
+
+                                    <label class="control-label">Transmisión</label>
+
+                                    <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbTipoTransmision">
+                                        <option value="">Transmisión</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="control-label">Traccion</label>
+                                    <select type="text" class="selectpicker" id="cmbTipoTraccion">
+                                        <option value="">Traccion</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-2">
+
+                                    <label class="control-label">Motor</label>
+                                    <input type="text" class="form-control text-right" id="motor" />
+
+                                </div>
+
+                                <div class="col-md-2">
+
+                                    <label class="control-label">Chasis</label>
+                                    <input type="text" class="form-control text-right" id="chasis" />
+
+                                </div>
+
+                                <div class="col-md-2">
+
+                                    <label class="control-label">Dueños</label>
+
+                                    <input type="number" min="0" class="form-control text-right" id="duenios" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+               
+
+                <div class="row">
+                    <div class="card" style="margin-left:1% !important;">
+                        <div class="card-header card-header-icon" data-background-color="orange">
+
+                            <img src="https://img.icons8.com/dotty/40/fff/details-popup.png">
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                            <div class="col-md-2">
+                                <label class="control-label">Sucursal</label>
+
+                                <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbSucursal">
+                                    <option value=""> SUCURSAL</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">Tipo de ingreso</label>
+                                <select type="text" class="selectpicker" id="cmbConsignacion">
+                                    <option value="">Tipo Ingreso</option>
+
+                                </select>
+
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">PRECIO de COMPRA</label>
+                                <input type="text" class="form-control text-right" id="precioCompra" />
+
+                            </div>
+                            <div class="col-md-2">
+
+                                <label class="control-label">PRECIO De VENTA</label>
+                                <input type="text" class="form-control text-uppercase " id="precioVenta" />
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <label class="control-label">PRECIO MINIMO de VENTA</label>
+                                <input type="text" class="form-control text-right" id="precioMinimoVenta" />
+
+                            </div>
+                        </div>
+
+                            <div class="row" style="margin-left:8% !important;">
+                                <div class="col-md-2">
+
+                                    <label class="control-label">PRECIO de CONSIGNACION</label>
+                                    <input type="text" class="form-control text-uppercase" id="precioConsigna" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Disponibilidad</label>
+
+                                    <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbDisponibilidad">
+                                        <option value=""> DISPONIBILIDAD</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Estado Vehiculo</label>
+
+                                    <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbEstado">
+                                        <option value=""> ESTADO</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <label class="control-label">Fecha de ingreso</label>
+                                    <input type="text" id="fechaIngreso"></p>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="control-label">USUARIO</label>
+
+                                    <select class="selectpicker" data-style="btn btn-default" data-size="7" id="cmbUsuario">
+                                        <option value="">USUARIO</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="row">
+                    <div class="card" style="margin-left:1% !important;">
+                        
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <input id="txtID_EquipoTransporte" class="hidden" />
+                        <button type="button" class="btn btn-rose btn-fill" id="Guardar" onclick="guardarVehiculo()">GUARDAR</button>
+                        <button type="button" class="btn btn-success btn-fill" id="Modificar" onclick="editarVehiculo()">MODIFICAR</button>
+                        <button type="button" class="btn btn-danger" onclick="javascript: Nuevo();" disabled="disabled">NUEVA </button>
+
+                    </div>
+                    <div class="col-md-3">
+
+
+                    <div class="col-sm-12">
+                        <label class="control-label">Imagen Vehiculo</label>
+                        @*<input type="file" name="archivo" id="archivo" class="fileinput-preview" onchange="visualizaImagen(this)">*@
+                        <input type="file" id="fileCargadorImagenes" class="fileinput-preview" accept="image/x-png,image/gif,image/jpeg" multiple onchange="mostrarImagenes()">
+
+                    </div>
+                    <div class="col-md-12" id="contendorImagenes">
+
+                    </div>
+
+                </div>
+
+
+                </div>
+                
+
+            </div>
+                
+                <div class="row">
+                    <!-- inicio fila -->
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="card-title">LISTADO DE Vehiculos</h4>
+                                    <p class="category">Seleccione Vehiculo para Editar / Eliminar </p>
+                                </div>
+                                <div class="card-content">
+                                    <table id="TablaEquipoTransporte" class="table table-hover small">
+                                        <thead>
+                                            <tr>
+                                                <th>ID VEHICULO</th>
+                                                <th>MODELO</th>
+                                                <th>PATENTE</th>
+                                                <th>Precio de compra</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="listarVehiculos">
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> <!-- cuadro table -->
+                    </div>
+                </div> <!-- fin fila -->
+            </div>
+    </div> <!-- fin Cuadro -->
+</div> <!-- fin tarjeta tarjeta -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            listarColorVehiculo();
+            listarMarcas();
+            listarCombustibles();
+            traerTraccion();
+            listarTransmision();
+            listaConsigna();
+            listaDisponibilidad();
+            listarSucursales();
+            listarEstadoVehiculo();
+            listarUsuarios();
+            listarModelos();
+            listarTipoVehiculo();
+            listarVehiculos();
+
+        });
+
+        function listarMarcas() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerMarcas",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    let listadoMarcas = jQuery.parseJSON(data.Descripcion);
+
+
+                    $.each(listadoMarcas, function (index, item) {
+                        let opt = '<option value="' + item.ID_MARCA + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbMarca").append(opt);
+
+
+                    });
+
+                    $("#cmbMarca").selectpicker('refresh');
+
+
+                }
+
+
+            });
+
+
+        }
+
+        function listarCombustibles() {
+
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerCombustibles",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    let listaCombustibles = jQuery.parseJSON(data.Descripcion);
+
+
+                    $.each(listaCombustibles, function (index, item) {
+                        let opt = '<option value="' + item.ID_TIPO_COMBUSTIBLE + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbCombustible").append(opt);
+
+
+                    });
+
+                    $("#cmbCombustible").selectpicker('refresh');
+
+
+                }
+
+            });
+
+        }
+
+        function traerTraccion() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerTraccion",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+
+                    var listaTraccion = jQuery.parseJSON(data.Descripcion);
+
+
+                    $.each(listaTraccion, function (index, item) {
+                        var opt = '<option value="' + item.ID_TIPOTRACCION + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbTipoTraccion").append(opt);
+
+
+                    });
+
+                    $("#cmbTipoTraccion").selectpicker('refresh');
+
+
+                }
+
+            });
+
+
+        }
+        function listarTransmision() {
+            console.log("Transmision");
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerTransmision",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaTransmision = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaTransmision, function (index, item) {
+                        var opt = '<option value="' + item.ID_TIPO_TRANSMICION + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbTipoTransmision").append(opt);
+
+
+                    });
+
+                    $("#cmbTipoTransmision").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+        function listaConsigna() {
+
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerConsignacion",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_TIPO_CONSIGNACION + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbConsignacion").append(opt);
+
+
+                    });
+
+                    $("#cmbConsignacion").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+        function listaDisponibilidad() {
+            console.log("consigna");
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerDisponibilidad",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaDisponible = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaDisponible, function (index, item) {
+                        var opt = '<option value="' + item.ID_DISPONIBILIDAD + '">' + item.ESTADO_DISPONIBILIDAD + '</option>';
+                        $("#cmbDisponibilidad").append(opt);
+
+
+                    });
+
+                    $("#cmbDisponibilidad").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+        function listarSucursales() {
+            $.ajax({
+                type: "POST",
+                url: "/Sucursal/TraerSucursal",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    let listaSucursal = jQuery.parseJSON(data.Descripcion);
+
+
+                    $.each(listaSucursal, function (index, item) {
+
+                        let opt = '<option value="' + item.ID_SUCURSAL + '">' + item.NOMBRE_SUCURSAL + '</option>';
+
+                        $("#cmbSucursal").append(opt);
+
+                    });
+                    $("#cmbSucursal").selectpicker('refresh');
+
+                }
+
+
+
+
+            });
+
+
+        }
+
+        function listarEstadoVehiculo() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerEstadoVehiculo",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_ESTADO + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbEstado").append(opt);
+
+
+                    });
+
+                    $("#cmbEstado").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+
+
+        function listarColorVehiculo() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerColor",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_COLOR + '">' + item.DESCRIPCION + '</option>';
+                        $("#cmbColor").append(opt);
+
+
+                    });
+
+                    $("#cmbColor").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+        function listarUsuarios() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerUsuarios",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_USUARIOS + '">' + item.NOMBRE_USUARIO + '</option>';
+                        $("#cmbUsuario").append(opt);
+
+
+                    });
+
+                    $("#cmbUsuario").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+        function listarModelos() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerModeloVehiculo",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_MODELO + '">' + item.NOMBRE_MODELO + '</option>';
+                        $("#cmbModelo").append(opt);
+
+
+                    });
+
+                    $("#cmbModelo").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+
+        function listarTipoVehiculo() {
+            $.ajax({
+                type: "POST",
+                url: "/MantenedorVehiculo/TraerTipoVehiculo",
+                content: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (respuesta) {
+
+                    var data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    var listaConsignacion = jQuery.parseJSON(data.Descripcion);
+
+                    $.each(listaConsignacion, function (index, item) {
+                        var opt = '<option value="' + item.ID_TIPO_VEHICULO + '">' + item.TIPO_VEHICULO + '</option>';
+                        $("#cmbTipoVehiculo").append(opt);
+
+                    });
+
+                    $("#cmbTipoVehiculo").selectpicker('refresh');
+
+
+                }
+
+            });
+        }
+
+
+        function mostrarImagenes() {
+            try {
+                let files = document.getElementById('fileCargadorImagenes').files
+              
+                $.each(files, function (index, file) {
+
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var content = "";
+                        content += '<img class="imagen-producto-guardar" style="width:100px ; heigth:100px;" src="' + e.target.result + '" alt="" />';
+                      
+
+                        document.getElementById('contendorImagenes').innerHTML += content;
+                    };
+
+                    reader.readAsDataURL(file);
+                });
+
+            } catch{
+                swal({
+                            title: 'Larrain automotriz',
+                            text: "uuupps, no se lograron cargar las imagenes",
+                            type: 'error',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+                        });
+            }
+        }
+
+        function visualizaImagen(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#archivo').attr('src', e.target.result);
+                    nombreImagen = $('#base').val(e.target.result);
+                    $("#imagenAuto").attr('src', e.target.result)
+                };
+                reader.readAsDataURL(input.files[0]);
+
+
+            }
+        }
+
+        function imagen() {
+            let srcImg = $("#imagenAuto").attr('src');
+            return srcImg;
+        }
+
+
+
+
+        function guardarImagen() {
+
+                var ImagenesEnviar = new Array();
+
+
+                $.each($('.imagen-producto-guardar'), function (index, item) {
+                     
+                    let nombreArchivo = $(item).val();
+                    let extension = nombreArchivo.substring(nombreArchivo.lastIndexOf("."));
+                    let imgBase64 = $(item).attr('src');
+                    
+                    let imagen = {
+                        TIPO_IMAGEN:nombreArchivo,
+                        IMAGEN: imgBase64,
+                        EXTENSION:"",
+                        VIGENCIA:"1"
+                    }
+
+                    ImagenesEnviar.push(imagen);
+
+                });
+
+        
+                return ImagenesEnviar;
+        }
+
+        $(function () {
+            let fechaIngreso = $('#fechaIngreso').datepicker({ dateFormat: 'yy-mm-dd HH:MM:ss' }).val();
+
+        });
+
+    function validar() {
+        let sucursal = $("#cmbSucursal").val();
+        let usuario = $("#cmbUsuario").val();
+        let disponibilidad = $("#cmbDisponibilidad").val();
+        let marca= $("#cmbMarca").val();
+        let tipoTraccion = $("#cmbTipoTraccion").val();
+        let consignacion = $("#cmbTipoTraccion").val();
+        let color = $("#cmbColor").val();
+        let transmision= $("#cmbTipoTransmision").val();
+        let tipoVehiculo = $("#cmbTipoVehiculo").val();
+        let combustible = $("#cmbCombustible").val();
+        let estado = $("#cmbEstado").val();
+        let modelo = $("#cmbModelo").val();
+        let anio =$("#anio").val();
+        let precioVenta =$("#precioVenta").val();
+        let precioCompra = $("#precioCompra").val();
+        let precioMinimoVenta = $("#precioMinimoVenta").val();
+        let precioConsigna = $("#precioConsigna").val();
+        let cantidadDuenios = $("#duenios").val();
+        let kilometraje = $("#kilometraje").val();
+        let version = $("#version").val();
+        let motor = $("#motor").val();
+        let cilindrada = $("#cilindrada").val();
+        let chasis = $("#chasis").val();
+        let fecha = $("#fechaIngreso").val();
+
+        if (sucursal == 0 || usuario == 0 || disponibilidad == 0 || marca == 0 || tipoTraccion == 0 || consignacion == 0 || color == 0 || transmision == 0 ||
+            tipoVehiculo == 0 || combustible == 0 || estado == 0 || modelo == 0 || anio == 0 || precioVenta == 0 || precioCompra == 0 || precioMinimoVenta == 0 ||
+            precioConsigna == 0 || cantidadDuenios == 0 || kilometraje == 0) {
+
+            return false;
+        } else if (version =="" || version ==null||motor =="" ||motor ==null || cilindrada ==""||cilindrada ==null || chasis == ""||chasis == null || fecha ==""||fecha ==null  ) {
+            return false;
+        } else {
+            return true
+        }
+
+    }
+
+    
+    function guardarVehiculo()
+    {
+        //let valido = false;
+        //valido = validar();
+
+        //if (valido == false) {
+        // swal({
+        //                    title: 'Larrain automotriz',
+        //                    text: "Debe rellenar todos los campos",
+        //                    type: 'error',
+        //                     customClass: 'swalAjustado',
+        //                    confirmButtonColor: '#299BE8',
+        //                    confirmButtonText: 'OK',
+        //                    confirmButtonClass: 'btn btn-info'
+        // });
+        //    return false;
+        //}
+ 
+     
+        //let vehiculo = {
+           
+        //    ID_SUCURSAL:$("#cmbSucursal").val(),
+        //    ID_USUARIOS:parseInt($("#cmbUsuario").val()),
+        //    ID_DISPONIBILIDAD:parseInt($("#cmbDisponibilidad").val()) ,
+        //    ID_MARCA:parseInt($("#cmbMarca").val()) ,
+        //    ID_TIPOTRACCION: parseInt($("#cmbTipoTraccion").val()),
+        //    ID_TIPO_CONSIGNACION: parseInt($("#cmbConsignacion").val()),
+        //    ID_COLOR:parseInt($("#cmbColor").val()),
+        //    ID_TIPO_TRANSMICION: parseInt($("#cmbTipoTransmision").val()),
+        //    ID_TIPO_VEHICULO:parseInt($("#cmbTipoVehiculo").val()),
+        //    ID_TIPO_COMBUSTIBLE:parseInt($("#cmbCombustible").val()),
+        //    ID_ESTADO: parseInt($("#cmbEstado").val()),
+        //    ID_MODELO:parseInt($("#cmbModelo").val()),
+        //    PATENTE:$("#patente").val(),
+        //    FECHA_INGRESO:$("#fechaIngreso").val(),
+        //    VERSION:$("#version").val(),
+        //    MOTOR:$("#motor").val(),
+        //    ANO:parseInt($("#anio").val()),
+        //    CILINDRADA:$("#cilindrada").val(),
+        //    PRECIO_VENTA: $("#precioVenta").val(),
+        //    PRECIO_COMPRA:parseInt($("#precioCompra").val()),
+        //    PRECIO_CONSIGNACION:parseInt($("#precioConsigna").val()),
+        //    PRECIO_MINIMO_VENTA:parseInt($("#precioMinimoVenta").val()) ,
+        //    KILOMETRAJE:parseInt($("#kilometraje").val()),
+        //    CHASIS: $("#chasis").val(),
+        //    CANTIDAD_DUENIOS:$("#duenios").val()
+
+        //}
+
+        var vehiculo = {
+            ID_SUCURSAL:1,
+            ID_USUARIOS:1,
+            ID_DISPONIBILIDAD:1 ,
+            ID_MARCA:1,
+            ID_TIPOTRACCION:1,
+            ID_TIPO_CONSIGNACION:1,
+            ID_COLOR:1,
+            ID_TIPO_TRANSMICION:1,
+            ID_TIPO_VEHICULO:1,
+            ID_TIPO_COMBUSTIBLE:1,
+            ID_ESTADO:1,
+            ID_MODELO:1,
+            PATENTE:1,
+            FECHA_INGRESO:"2019-06-23",
+            VERSION:1,
+            MOTOR:1,
+            ANO:1,
+            CILINDRADA:1,
+            PRECIO_VENTA:1,
+            PRECIO_COMPRA:1,
+            PRECIO_CONSIGNACION:1,
+            PRECIO_MINIMO_VENTA:1 ,
+            KILOMETRAJE:1,
+            CHASIS:1,
+            CANTIDAD_DUENIOS:1
+
+        }
+        let imagenVehiculo = {}
+        imagenVehiculo = guardarImagen();
+     
+
+        $.ajax({
+            type: "POST",
+            url: "/MantenedorVehiculo/GuardarVehiculo",
+            content: "application/json; charset=utf-8",
+            dataType: "json",
+            data: { vehiculo:vehiculo, imagenes:guardarImagen()  },
+
+                success: function (respuesta) {
+                    limpiarDatos();
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    
+                    if (respuesta.Respuesta == "OK") {
+
+                         swal({
+                            title: 'Larrain automotriz',
+                            text: respuesta.Detalle_Error,
+                            type: 'success',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+                        });
+
+                       // location.href = "@Url.Action("/Index","MantenedorVehiculo")";
+
+                    }
+
+                    else {
+
+
+                        swal({
+                            title: 'Larrain automotriz',
+                            text: respuesta.Detalle_Error,
+                            type: 'error',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+                        });
+
+
+                    }
+                }
+
+
+
+            });
+
+        
+
+        
+       
+    }
+
+    function listarVehiculos() {
+        $.ajax({
+            type: "POST",
+            url: "/MantenedorVehiculo/TraerVehiculo",
+            content: "application/json; charset=utf-8",
+            dataType: "json",
+
+            success: function (respuesta) {
+                console.log(respuesta);
+                let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                //console.log(data);
+                let listaVehiculo = jQuery.parseJSON(data.Descripcion);
+                //console.log(listaVehiculo);
+
+
+                $.each(listaVehiculo, function (index, item) {
+                    var strHtml = '<tr>';
+                     strHtml += '<td>' + item.ID_VEHICULO + '</td>';
+                    strHtml += '<td>' + item.NOMBRE_MODELO + '</td>';
+                    strHtml += '<td>' + item.PATENTE + '</td>';
+                    strHtml += '<td>' + item.PRECIO_COMPRA + '</td>';
+                    strHtml +='<img style="width:100px;height:100px;" src="'+item.IMAGEN_PRINCIPAL+'">';
+                    strHtml += '<td><a href="#"  class="btn btn-warning" onclick="mostrarDatosVehiculo('+item.ID_VEHICULO+')">Editar</a></td>';
+                    //strHtml += '<td><a href="#"  class="btn btn-danger" onclick="eliminarVehiculo('+item.ID_VEHICULO+')">Eliminar</a></td>';
+                    strHtml += '</tr">';
+
+                    $("#listarVehiculos").append(strHtml);
+
+
+                });
+
+
+
+            }
+
+        });
+    }
+
+    function limpiarDatos() {
+        $("#cmbSucursal").val(0);
+        $("#cmbSucursal").selectpicker('refresh');
+
+        $("#cmbUsuario").val(0);
+        $("#cmbUsuario").selectpicker('refresh');
+
+        $("#cmbDisponibilidad").val(0);
+        $("#cmbDisponibilidad").selectpicker('refresh');
+
+        $("#cmbMarca").val(0);
+        $("#cmbMarca").selectpicker('refresh');
+
+
+        $("#cmbTipoTraccion").val(0);
+        $("#cmbTipoTraccion").selectpicker('refresh');
+
+        $("#cmbTipoTraccion").val(0);
+        $("#cmbTipoTraccion").selectpicker('refresh');
+
+        $("#cmbColor").val(0);
+        $("#cmbColor").selectpicker('refresh');
+
+        $("#cmbTipoTransmision").val(0);
+        $("#cmbTipoTransmision").selectpicker('refresh');
+
+        $("#cmbTipoVehiculo").val(0);
+        $("#cmbTipoVehiculo").selectpicker('refresh');
+
+        $("#cmbCombustible").val(0);
+        $("#cmbCombustible").selectpicker('refresh');
+
+        $("#cmbEstado").val(0);
+        $("#cmbEstado").selectpicker('refresh');
+
+        $("#cmbModelo").val(0);
+        $("#cmbModelo").selectpicker('refresh');
+        $("#patente").val("");
+        $("#anio").val("");
+        $("#precioVenta").val("");
+        $("#precioCompra").val("");
+        $("#precioMinimoVenta").val("");
+        $("#precioConsigna").val("");
+        $("#duenios").val("");
+        $("#kilometraje").val("");
+        $("#version").val("");
+        $("#motor").val("");
+        $("#cilindrada").val("");
+        $("#chasis").val("");
+        $("#fechaIngreso").val("");
+
+    }
+
+    function editarVehiculo() {
+        let valido = false;
+        valido = validar();
+
+        if (valido == false) {
+         swal({
+                            title: 'Larrain automotriz',
+                            text: "Debe rellenar todos los campos",
+                            type: 'error',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+         });
+            return false;
+        }
+ 
+     
+        let vehiculo = {
+            ID_VEHICULO: $('#ID_VEHICULO').val(),
+            ID_SUCURSAL:$("#cmbSucursal").val(),
+            ID_USUARIOS:parseInt($("#cmbUsuario").val()),
+            ID_DISPONIBILIDAD:parseInt($("#cmbDisponibilidad").val()) ,
+            ID_MARCA:parseInt($("#cmbMarca").val()) ,
+            ID_TIPOTRACCION: parseInt($("#cmbTipoTraccion").val()),
+            ID_TIPO_CONSIGNACION: parseInt($("#cmbConsignacion").val()),
+            ID_COLOR:parseInt($("#cmbColor").val()),
+            ID_TIPO_TRANSMICION: parseInt($("#cmbTipoTransmision").val()),
+            ID_TIPO_VEHICULO:parseInt($("#cmbTipoVehiculo").val()),
+            ID_TIPO_COMBUSTIBLE:parseInt($("#cmbCombustible").val()),
+            ID_ESTADO: parseInt($("#cmbEstado").val()),
+            ID_MODELO:parseInt($("#cmbModelo").val()),
+            PATENTE:$("#patente").val(),
+            FECHA_INGRESO:$("#fechaIngreso").val(),
+            VERSION:$("#version").val(),
+            MOTOR:$("#motor").val(),
+            ANO:parseInt($("#anio").val()),
+            CILINDRADA:$("#cilindrada").val(),
+            PRECIO_VENTA: $("#precioVenta").val(),
+            PRECIO_COMPRA:parseInt($("#precioCompra").val()),
+            PRECIO_CONSIGNACION:parseInt($("#precioConsigna").val()),
+            PRECIO_MINIMO_VENTA:parseInt($("#precioMinimoVenta").val()) ,
+            KILOMETRAJE:parseInt($("#kilometraje").val()),
+            CHASIS: $("#chasis").val(),
+            CANTIDAD_DUENIOS:$("#duenios").val()
+
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: "/MantenedorVehiculo/EditarVehiculo",
+            content: "application/json; charset=utf-8",
+            dataType: "json",
+            data: { vehiculo:vehiculo, imagenes:guardarImagen()  },
+
+                success: function (respuesta) {
+                    limpiarDatos();
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    console.log(respuesta)
+                    if (respuesta.Respuesta == "OK") {
+
+                         swal({
+                            title: 'Larrain automotriz',
+                            text: respuesta.Detalle_Error,
+                            type: 'success',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                             confirmButtonClass: 'btn btn-info'
+                            
+                        });
+
+                        
+
+                    }
+
+                    else {
+
+
+                        swal({
+                            title: 'Larrain automotriz',
+                            text: respuesta.Detalle_Error,
+                            type: 'error',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+                        });
+
+
+                    }
+                }
+
+
+
+            });
+
+    }
+
+    function mostrarDatosVehiculo(idVehiculo) {
+        let vehiculo = {
+            ID_VEHICULO:idVehiculo
+        }
+           $.ajax({
+            type: "POST",
+            url: "/MantenedorVehiculo/TraerVehiculoPorID",
+            content: "application/json; charset=utf-8",
+            dataType: "json",
+               data: vehiculo,
+
+                success: function (respuesta) {
+
+                    let data = jQuery.parseJSON(JSON.stringify(respuesta));
+                    if (respuesta.Respuesta == "OK") {
+                        detalle = jQuery.parseJSON(data.Descripcion);
+                        console.log(detalle);
+                        $("#ID_VEHICULO").val(detalle.ID_VEHICULO);
+                        $("#cmbTipoVehiculo").val(detalle.ID_TIPO_VEHICULO);
+                        $("#cmbTipoVehiculo").selectpicker('refresh');
+
+                        $("#cmbSucursal").val(detalle.ID_SUCURSAL);
+                        $("#cmbSucursal").selectpicker('refresh');
+
+                        $("#cmbUsuario").val(detalle.ID_USUARIOS);
+                        $("#cmbUsuario").selectpicker('refresh');
+
+                        $("#cmbDisponibilidad").val(detalle.ID_DISPONIBILIDAD);
+                        $("#cmbDisponibilidad").selectpicker('refresh');
+
+                        $("#cmbMarca").val(detalle.ID_MARCA);
+                        $("#cmbMarca").selectpicker('refresh');
+
+                        $("#cmbTipoTraccion").val(detalle.ID_TIPOTRACCION);
+                        $("#cmbTipoTraccion").selectpicker('refresh');
+
+                        $("#cmbConsignacion").val(detalle.ID_TIPO_CONSIGNACION);
+                        $("#cmbConsignacion").selectpicker('refresh');
+
+                        $("#cmbColor").val(detalle.ID_COLOR);
+                        $("#cmbColor").selectpicker('refresh');
+
+                        $("#cmbTipoTransmision").val(detalle.ID_TIPO_TRANSMICION);
+                        $("#cmbTipoTransmision").selectpicker('refresh');
+
+                        $("#cmbCombustible").val(detalle.ID_TIPO_COMBUSTIBLE);
+                        $("#cmbCombustible").selectpicker('refresh');
+
+                        $("#cmbEstado").val(detalle.ID_ESTADO);
+                        $("#cmbEstado").selectpicker('refresh');
+
+
+                        $("#cmbModelo").val(detalle.ID_MODELO);
+                        $("#cmbModelo").selectpicker('refresh');
+
+
+
+
+                        $("#fechaIngreso").val(detalle.FECHA_INGRESO);
+                        $("#anio").val(detalle.FECHA_INGRESO);
+                        $("#precioMinimoVenta").val(detalle.PRECIO_MINIMO_VENTA);
+                        $("#precioConsigna").val(detalle.PRECIO_CONSIGNACION);
+                        $("#precioCompra").val(detalle.PRECIO_COMPRA);
+                        $("#precioVenta").val(detalle.PRECIO_VENTA);
+                        $("#motor").val(detalle.MOTOR);
+                        $("#cilindrada").val(detalle.CILINDRADA);
+                        $("#version").val(detalle.VERSION);
+                        $("#duenios").val(detalle.CANTIDAD_DUENIOS);
+                        $("#chasis").val(detalle.CHASIS);
+                        $("#patente").val(detalle.PATENTE);
+                        $("#kilometraje").val(detalle.KILOMETRAJE);
+
+                       // location.href = "@Url.Action("/Index","MantenedorVehiculo")";
+
+                    }
+
+                    else {
+
+
+                        swal({
+                            title: 'Larrain automotriz',
+                            text: 'NO ENCONTRE EL VEHICULO!!',
+                            type: 'error',
+                             customClass: 'swalAjustado',
+                            confirmButtonColor: '#299BE8',
+                            confirmButtonText: 'OK',
+                            confirmButtonClass: 'btn btn-info'
+                        });
+
+
+                    }
+                }
+
+
+
+            });
+
+      }
+
+
+    //function eliminarVehiculo(id) {
+    //    let idVehiculo = parseInt(id);
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/MantenedorVehiculo/EliminarVehiculo",
+    //        content: "application/json; charset=utf-8",
+    //        dataType: "json",
+    //        data: {
+    //            ID_VEHICULO: idVehiculo
+    //        },
+
+    //        success: function (respuesta) {
+                
+    //           location.href="http://www.google.cl";
+    //        }
+
+    //    });
+    //    }
+
+  
+
+</script>

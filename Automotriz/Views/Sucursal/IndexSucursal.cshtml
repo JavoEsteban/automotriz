@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "IndexSucursal";
+    Layout = "~/Views/Shared/_Layout_general.cshtml";
+}
+    <form action="@Url.Action("VistaSucursal","Sucursal")" method="POST">
+        <input type="text" name="nombreSuc" id="nombreSuc" placeholder="Nombre sucursal" />
+        <input type="text" name="direccion" id="direccion" placeholder="Direccion" />
+        <input type="text" name="fono" id="fono" placeholder="Telefono" />
+        <input type="file" id="archivo" name="archivo" onchange="readURL(this)">
+        <input type="text" name="vigencia" id="vigencia" value="0" />
+        <img id="vistaPrevia" src="" />
+        <input type="submit" onclick="guardarSucursal()" value="Enviar imagen" />
+    </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function validarIngreso() {
+        let nombreSucursal = $("#nombreSuc").val();
+        let direccion = $("#direccion").val();
+        let fono = $("#fono").val();
+        let archivo = $("#archivo").val();
+
+        if (nombreSucursal == "" || nombreSucursal) {
+
+        }
+        if (contenidoImg == null) {
+            alert("no hay imagen seleccionada");
+        } else {
+            alert("Tengo una imagen cargada" +contenidoImg);
+        }
+        
+    }
+    function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$('#archivo').attr('src', e.target.result);
+                    nombreImagen=$('#base').val(e.target.result);
+                    $("#vistaPrevia").attr('src', e.target.result)
+				};
+                reader.readAsDataURL(input.files[0]);
+
+                
+        }
+    }
+
+    function imagen() {
+        let srcImg = $("#vistaPrevia").attr('src');
+        alert(srcImg);
+        return srcImg;
+    }
+    
+    function guardarSucursal() {
+       
+        let miBase64 = imagen();
+        let nombreArchivo = $("#archivo").val();
+        let extension = nombreArchivo.substring(nombreArchivo.lastIndexOf("."));
+        let objSucursal = {
+            DESCRIPCION: $('#nombreSuc').val(),
+            DIRECCION: $("#direccion").val(),
+            TELEFONO: $("#fono").val(),
+            IMAGEN: miBase64,
+            VIGENCIA: 0,
+            TIPO_ARCHIVO: "",
+            EXTENSION: extension
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Sucursal/cargarImagen",
+            data: objSucursal,
+            content: "application/json; charset=utf-8",
+        dataType: "json",
+       
+            success: function (respuesta) {
+                
+                alert("se fue");
+                
+            }
+
+
+
+
+        });
+    }
+
+
+</script>
